@@ -24,15 +24,23 @@ namespace main
             _notifyers = new List<INotifyer>();
         }
 
-        public void AddNotifyer(INotifyer _notifyers)
+        public void AddNotifyer(INotifyer _notifyer)
         {
-            //something
+            _notifyers.Add(_notifyer);
         }
 
         public void ChangeBalance(decimal value)
         {
             _balance = value;
-            //something
+            Notification();
+        }
+
+        private void Notification()
+        {
+            foreach (var notifyer in _notifyers)
+            {
+                notifyer.Notify(_balance);
+            }
         }
 
         public decimal Balance
