@@ -1,0 +1,55 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        x:Class="Homework_2.MainWindow"
+        Title="Homework_2"
+		Background ="White"
+        Width="600" Height="400"
+        MinWidth="300" MinHeight="300">
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="1*"/>
+			<ColumnDefinition Width="0.1*"/>
+			<ColumnDefinition Width="2*"/>
+		</Grid.ColumnDefinitions>
+
+		<StackPanel Orientation="Vertical" Grid.Column="0" Background ="White">
+			<Border BorderThickness="2" BorderBrush="Black" Margin="2">
+				<Button Content="Khaki" Click="Button_Click" Background="Khaki" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="Black"/>
+			</Border>
+			<Border BorderThickness="2" BorderBrush="Black" Margin="2">
+				<Button Content="Red" Click="Button_Click" Background="Red" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+			</Border>
+			<Border BorderThickness="2" BorderBrush="Black" Margin="2">
+				<Button Content="MediumVioletRed" Click="Button_Click" Background="MediumVioletRed" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+			</Border>
+			<Border BorderThickness="2" BorderBrush="Black" Margin="2">
+				<Button Content="Bisque" Click="Button_Click" Background="Bisque" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="Black"/>
+			</Border>
+			<Border BorderThickness="2" BorderBrush="Black" Margin="2">
+				<Button Content="LemonChiffon" Click="Button_Click" Background="LemonChiffon" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="Black"/>
+			</Border>
+			<Border BorderThickness="2" BorderBrush="Black" Margin="2">
+				<Button Content="PowderBlue" Click="Button_Click" Background="PowderBlue" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="Black"/>
+			</Border>
+			<Border BorderThickness="2" BorderBrush="Black" Margin="2">
+				<Button Content="MintCream" Click="Button_Click" Background="MintCream" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="Black"/>
+			</Border>
+			<Border BorderThickness="2" BorderBrush="Black" Margin="2">
+				<Button Content="Maroon" Click="Button_Click" Background="Maroon" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+			</Border>
+			<Border BorderThickness="2" BorderBrush="Black" Margin="2">
+				<Button Content="RosyBrown" Click="Button_Click" Background="RosyBrown" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="Black"/>
+			</Border>
+			<Border BorderThickness="2" BorderBrush="Black" Margin="2">
+				<Button Content="LightPink" Click="Button_Click" Background="LightPink" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="Black"/>
+			</Border>
+		</StackPanel>
+
+		<GridSplitter Grid.Column="1" Width="5" Background="Black" VerticalAlignment="Stretch"/>
+
+		<Rectangle Grid.Column="2" x:Name="rectangle" Fill="Khaki"/>
+
+	</Grid>
+</Window>
