@@ -1,0 +1,190 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+		xmlns:local="clr-namespace:Homework_3"
+        x:Class="Homework_3.MainWindow"
+        Title="Calculator"
+		Width="535" Height="500"
+        Background="White">
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
+
+		<StackPanel Grid.Row="0" Background="Black">
+			<TextBlock x:Name="Display" Margin="10" Padding="15" Height="60" TextWrapping="Wrap" Background="White" FontSize="24" Foreground="Black" TextAlignment="Right" VerticalAlignment="Center"/>
+		</StackPanel>
+
+		<Grid Grid.Row="1" Background="Gray">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="0.87*"/>
+				<ColumnDefinition Width="3*"/>
+			</Grid.ColumnDefinitions>
+
+			<StackPanel Grid.Column="0" VerticalAlignment="Top">
+				<Border BorderThickness="2" BorderBrush="Black" Width="120" Height="60">
+					<Button Content="Backspace" Click="Button_Click" x:Name="backspaceButton" MinWidth="120" MinHeight="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Black"/>
+				</Border>
+				<Grid>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="1*"/>
+						<ColumnDefinition Width="1*"/>
+					</Grid.ColumnDefinitions>
+					<Border Grid.Column="0" BorderThickness="2" BorderBrush="Black" Width="60" Height="60">
+					</Border>
+					<Border Grid.Column="1" BorderThickness="2" BorderBrush="Black" Width="60" Height="60">
+						<Button Content="C" Click="Button_Click" x:Name="clearButton" MinWidth="60" MinHeight="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Black"/>
+					</Border>
+				</Grid>
+				<Grid>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="1*"/>
+						<ColumnDefinition Width="1*"/>
+					</Grid.ColumnDefinitions>
+					<Border Grid.Column="0" BorderThickness="2" BorderBrush="Black" Width="60" Height="60">
+						<Button Content="mod" Click="Button_Click" x:Name="modButton" MinWidth="60" MinHeight="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Black"/>
+					</Border>
+					<Border Grid.Column="1" BorderThickness="2" BorderBrush="Black" Width="60" Height="60">
+						<Button Content="n!" Click="Button_Click" x:Name="factorialButton" MinWidth="60" MinHeight="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Black"/>
+					</Border>
+				</Grid>
+				<Grid>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="1*"/>
+						<ColumnDefinition Width="1*"/>
+					</Grid.ColumnDefinitions>
+					<Border Grid.Column="0" BorderThickness="2" BorderBrush="Black" Width="60" Height="60">
+						<Button Content="x^y" Click="Button_Click" x:Name="powButton" MinWidth="60" MinHeight="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Black"/>
+					</Border>
+					<Border Grid.Column="1" BorderThickness="2" BorderBrush="Black" Width="60" Height="60">
+						<Button Content="log" Click="Button_Click" x:Name="logButton" MinWidth="60" MinHeight="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Black"/>
+					</Border>
+				</Grid>
+				<Grid>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="1*"/>
+						<ColumnDefinition Width="1*"/>
+					</Grid.ColumnDefinitions>
+					<Border Grid.Column="0" BorderThickness="2" BorderBrush="Black" Width="60" Height="60">
+						<Button Content="ln" Click="Button_Click" x:Name="natlogButton" MinWidth="60" MinHeight="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Black"/>
+					</Border>
+					<Border Grid.Column="1" BorderThickness="2" BorderBrush="Black" Width="60" Height="60">
+						<Button Content="sin" Click="Button_Click" x:Name="sinusButton" MinWidth="60" MinHeight="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Black"/>
+					</Border>
+				</Grid>
+				<Grid>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="1*"/>
+						<ColumnDefinition Width="1*"/>
+					</Grid.ColumnDefinitions>
+					<Border Grid.Column="0" BorderThickness="2" BorderBrush="Black" Width="60" Height="60">
+						<Button Content="cos" Click="Button_Click" x:Name="cosinusButton" MinWidth="60" MinHeight="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Black"/>
+					</Border>
+					<Border Grid.Column="1" BorderThickness="2" BorderBrush="Black" Width="60" Height="60">
+						<Button Content="tan" Click="Button_Click" x:Name="tangensButton" MinWidth="60" MinHeight="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Black"/>
+					</Border>
+				</Grid>
+				<Grid>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="1*"/>
+						<ColumnDefinition Width="1*"/>
+					</Grid.ColumnDefinitions>
+					<Border Grid.Column="0" BorderThickness="2" BorderBrush="Black" Width="60" Height="60">
+						<Button Content="floor" Click="Button_Click" x:Name="floorButton" MinWidth="60" MinHeight="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Black"/>
+					</Border>
+					<Border Grid.Column="1" BorderThickness="2" BorderBrush="Black" Width="60" Height="60">
+						<Button Content="ceil" Click="Button_Click" x:Name="ceilButton" MinWidth="60" MinHeight="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Black"/>
+					</Border>
+				</Grid>
+			</StackPanel>
+
+			<StackPanel Grid.Column="1" VerticalAlignment="Top">
+				<Grid>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="1*"/>
+						<ColumnDefinition Width="1*"/>
+						<ColumnDefinition Width="1*"/>
+						<ColumnDefinition Width="1*"/>
+					</Grid.ColumnDefinitions>
+					<Border Grid.Column="0" BorderThickness="2" BorderBrush="Black" Width="105" Height="105">
+						<Button Content="7" Click="Button_Click" x:Name="sevenButton" MinWidth="105" MinHeight="105" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Black"/>
+					</Border>
+					<Border Grid.Column="1" BorderThickness="2" BorderBrush="Black" Width="105" Height="105">
+						<Button Content="8" Click="Button_Click" x:Name="eightButton" MinWidth="105" MinHeight="105" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Black"/>
+					</Border>
+					<Border Grid.Column="2" BorderThickness="2" BorderBrush="Black" Width="105" Height="105">
+						<Button Content="9" Click="Button_Click" x:Name="nineButton" MinWidth="105" MinHeight="105" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Black"/>
+					</Border>
+					<Border Grid.Column="3" BorderThickness="2" BorderBrush="Black" Width="105" Height="105">
+						<Button Content="/" Click="Button_Click" x:Name="divisionButton" MinWidth="105" MinHeight="105" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Black"/>
+					</Border>
+				</Grid>
+				<Grid>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="1*"/>
+						<ColumnDefinition Width="1*"/>
+						<ColumnDefinition Width="1*"/>
+						<ColumnDefinition Width="1*"/>
+					</Grid.ColumnDefinitions>
+					<Border Grid.Column="0" BorderThickness="2" BorderBrush="Black" Width="105" Height="105">
+						<Button Content="4" Click="Button_Click" x:Name="fourButton" MinWidth="105" MinHeight="105" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Black"/>
+					</Border>
+					<Border Grid.Column="1" BorderThickness="2" BorderBrush="Black" Width="105" Height="105">
+						<Button Content="5" Click="Button_Click" x:Name="fiveButton" MinWidth="105" MinHeight="105" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Black"/>
+					</Border>
+					<Border Grid.Column="2" BorderThickness="2" BorderBrush="Black" Width="105" Height="105">
+						<Button Content="6" Click="Button_Click" x:Name="sixButton" MinWidth="105" MinHeight="105" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Black"/>
+					</Border>
+					<Border Grid.Column="3" BorderThickness="2" BorderBrush="Black" Width="105" Height="105">
+						<Button Content="*" Click="Button_Click" x:Name="multiplicationButton" MinWidth="105" MinHeight="105" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Black"/>
+					</Border>
+				</Grid>
+				<Grid>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="1*"/>
+						<ColumnDefinition Width="1*"/>
+						<ColumnDefinition Width="1*"/>
+						<ColumnDefinition Width="1*"/>
+					</Grid.ColumnDefinitions>
+					<Border Grid.Column="0" BorderThickness="2" BorderBrush="Black" Width="105" Height="105">
+						<Button Content="1" Click="Button_Click" x:Name="oneButton" MinWidth="105" MinHeight="105" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Black"/>
+					</Border>
+					<Border Grid.Column="1" BorderThickness="2" BorderBrush="Black" Width="105" Height="105">
+						<Button Content="2" Click="Button_Click" x:Name="twoButton" MinWidth="105" MinHeight="105" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Black"/>
+					</Border>
+					<Border Grid.Column="2" BorderThickness="2" BorderBrush="Black" Width="105" Height="105">
+						<Button Content="3" Click="Button_Click" x:Name="threeButton" MinWidth="105" MinHeight="105" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Black"/>
+					</Border>
+					<Border Grid.Column="3" BorderThickness="2" BorderBrush="Black" Width="105" Height="105">
+						<Button Content="-" Click="Button_Click" x:Name="substractionButton" MinWidth="105" MinHeight="105" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Black"/>
+					</Border>
+				</Grid>
+				<Grid>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="1*"/>
+						<ColumnDefinition Width="1*"/>
+						<ColumnDefinition Width="1*"/>
+						<ColumnDefinition Width="1*"/>
+					</Grid.ColumnDefinitions>
+					<Border Grid.Column="0" BorderThickness="2" BorderBrush="Black" Width="105" Height="105">
+						<Button Content="0" Click="Button_Click" x:Name="zeroButton" MinWidth="105" MinHeight="105" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Black"/>
+					</Border>
+					<Border Grid.Column="1" BorderThickness="2" BorderBrush="Black" Width="105" Height="105">
+						<Button Content="," Click="Button_Click" x:Name="decimalButton" MinWidth="105" MinHeight="105" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Black"/>
+					</Border>
+					<Border Grid.Column="2" BorderThickness="2" BorderBrush="Black" Width="105" Height="105">
+						<Button Content="=" Click="Button_Click" x:Name="equallyButton" MinWidth="105" MinHeight="105" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#3189FF" Foreground="White"/>
+					</Border>
+					<Border Grid.Column="3" BorderThickness="2" BorderBrush="Black" Width="105" Height="105">
+						<Button Content="+" Click="Button_Click" x:Name="addictionButton" MinWidth="105" MinHeight="105" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Black"/>
+					</Border>
+				</Grid>
+			</StackPanel>
+		</Grid>
+	</Grid>
+</Window>
+
+
