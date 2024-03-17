@@ -1,0 +1,35 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Homework_6"
+        mc:Ignorable="d"
+        x:Class="Homework_6.MainWindow"
+        Title="Weather Forecast"
+        Width="500" Height="850">
+	<Grid Background="DodgerBlue">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="25*"/>
+			<RowDefinition Height="25*"/>
+			<RowDefinition Height="45*"/>
+		</Grid.RowDefinitions>
+
+		<TextBlock x:Name="TodayTextBlock" TextWrapping="Wrap" FontSize="35" Margin="20,5,0,0"/>
+		<TextBox x:Name="CityTextBox" Watermark="Enter city name" Width="120" Height="30" Margin="30,10,140,0" HorizontalAlignment="Right" VerticalAlignment="Top" Grid.Row="0" Grid.Column="1" />
+
+		<Button x:Name="UpdateButton" Grid.Row="0" Content="Update Weather" Click="UpdateButton_Click" Width="120" Height="30" Margin="10"  HorizontalAlignment="Right" VerticalAlignment="Top"/>
+		<StackPanel Grid.Row="0" Orientation="Horizontal">
+			<TextBlock x:Name="MainTextBlock" Text="No info" Margin="110,120,0,0" TextWrapping="Wrap" FontSize="65"/>
+			<Image x:Name="WeatherIcon" Margin="100,100,0,0" HorizontalAlignment="Right" VerticalAlignment="Top" Width="120" Height="100" Stretch="Uniform"/>
+		</StackPanel>
+
+		<StackPanel Grid.Row="1" Orientation="Horizontal">
+			<TextBlock x:Name="TodayWeatherTextBlock" TextWrapping="Wrap" FontSize="23" Margin="15,0,0,0"/>
+		</StackPanel>
+
+		<StackPanel Grid.Row="2" Orientation="Vertical">
+			<TextBlock x:Name="OtherDaysWeatherTextBlock" TextWrapping="Wrap" FontSize="23"/>
+			<Image x:Name="OtherWeatherIcon" Margin="100,100,0,0" HorizontalAlignment="Right" VerticalAlignment="Top" Width="120" Height="100" Stretch="Uniform"/>
+		</StackPanel>
+	</Grid>
+</Window>
