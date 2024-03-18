@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "rb/Vyx1ZBux6qNXdNG6bsNMdwNNhvfgOq6sAJ2U4p1Ei+o1bvO6vlHyU1KrQ6FTvJy+JQIK2KpstXGUZXjYnXA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Admin\\source\\repos\\Csharp_works_SIBGUTI\\Homework#7\\Homework#7.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Admin\\.nuget\\packages\\system.reactive\\6.0.0\\system.reactive.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
