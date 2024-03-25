@@ -1,0 +1,26 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:Homework_8.ViewModels"
+			 xmlns:pages="clr-namespace:Homework_8.ViewModels.Pages"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="Homework_8.Views.MainView"
+             x:DataType="vm:MainViewModel">
+	<Design.DataContext>
+		<vm:MainViewModel />
+	</Design.DataContext>
+	<ScrollViewer>
+		<StackPanel>
+			<RadioButton Command="{Binding SwitchViewCommand}" CommandParameter="{Binding Path=VmbaseCollection[0]}">
+				DataGrid
+			</RadioButton>
+			<RadioButton Command="{Binding SwitchViewCommand}" CommandParameter="{Binding Path=VmbaseCollection[1]}">
+				TreeView
+			</RadioButton>
+			<ContentControl Content="{Binding Content}"/>
+		</StackPanel>
+	</ScrollViewer>
+
+
+</UserControl>

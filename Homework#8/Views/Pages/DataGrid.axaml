@@ -1,0 +1,22 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:Homework_8.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:DataType="vm:DataGridViewModel"
+			 x:Class="Homework_8.Views.Pages.DataGrid">
+
+	<DataGrid  Margin="20" ItemsSource="{Binding DataGrid}" IsReadOnly="True" AutoGenerateColumns="False"  GridLinesVisibility="All">
+		<DataGrid.Columns>
+			<DataGridTextColumn Header="Name" Binding="{Binding name}" />
+			<DataGridTextColumn Header="Email" Binding="{Binding email}" />
+			<DataGridTextColumn Header="Username" Binding="{Binding username}" />
+			<DataGridTextColumn Header="Phone" Binding="{Binding phone}" />
+			<DataGridTextColumn Header="Website" Binding="{Binding website}" />
+			<DataGridTextColumn Header="City" Binding="{Binding address.city}" />
+		</DataGrid.Columns>
+	</DataGrid>
+
+	
+</UserControl>

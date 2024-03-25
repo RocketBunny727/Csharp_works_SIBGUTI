@@ -1,0 +1,45 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:Homework_8.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:DataType="vm:TreeViewModel"
+			 x:Class="Homework_8.Views.Pages.TreeView">
+
+<TreeView Margin="20" Grid.Row="0" ItemsSource="{Binding DataTree}" BorderBrush="White">
+	<TreeView.ItemTemplate>
+		<DataTemplate>
+			<TreeViewItem Header="{Binding id}">
+				<TreeViewItem.Items>
+					<TreeViewItem Header="{Binding name}" />
+					<TreeViewItem Header="{Binding username}" />
+					<TreeViewItem Header="{Binding email}" />
+					<TreeViewItem Header="Address">
+						<TreeViewItem.Items>
+							<TreeViewItem Header="{Binding address.city}" />
+							<TreeViewItem Header="{Binding address.street}" />
+							<TreeViewItem Header="{Binding address.suite}" />
+							<TreeViewItem Header="{Binding address.zipcode}" />
+							<TreeViewItem Header="Geo">
+								<TreeViewItem.Items>
+									<TreeViewItem Header="{Binding address.geo.lat}" />
+									<TreeViewItem Header="{Binding address.geo.lng}" />
+								</TreeViewItem.Items>
+							</TreeViewItem>
+						</TreeViewItem.Items>
+					</TreeViewItem>
+					<TreeViewItem Header="Company">
+						<TreeViewItem.Items>
+							<TreeViewItem Header="{Binding company.name}"/>
+							<TreeViewItem Header="{Binding company.catchPhrase}" />
+							<TreeViewItem Header="{Binding company.bs}" />
+						</TreeViewItem.Items>
+					</TreeViewItem>
+				</TreeViewItem.Items>
+			</TreeViewItem>
+		</DataTemplate>
+	</TreeView.ItemTemplate>
+</TreeView>
+
+</UserControl>
