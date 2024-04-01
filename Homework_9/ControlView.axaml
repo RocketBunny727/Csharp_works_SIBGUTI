@@ -10,7 +10,7 @@
 	<Grid >
 		<StackPanel Orientation="Vertical">
 			<Button x:Name="ControlButton" Width="180" Height="180" Content="Collapsed / Expanded" Margin="0" Padding="15" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0"/>
-			<Slider x:Name="Slider" Width="500" Height="50" HorizontalAlignment="Center" VerticalAlignment="Center" IsVisible="{Binding IsExpanded}" Grid.Row="1"/>
+			<Slider x:Name="Slider" Width="500" Height="50" Minimum="{Binding Minimum}" Maximum="{Binding Maximum}" HorizontalAlignment="Center" VerticalAlignment="Center" IsVisible="{Binding IsExpanded}" Grid.Row="1"/>
 			<TextBlock x:Name="DataTextBlock" Text="{Binding ElementName=Slider, Path=Value, StringFormat={}{0:F0}}" IsVisible="{Binding IsExpanded}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 		</StackPanel>
 	</Grid>

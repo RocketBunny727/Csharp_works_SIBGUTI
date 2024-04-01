@@ -6,9 +6,10 @@
         xmlns:cc="clr-namespace:Homework_9"
         mc:Ignorable="d" Width="800" Height="450"
         x:Class="Homework_9.MainWindow"
+		x:DataType="local:ControlView"
         Title="Homework_9">
 
 	<Grid>
-		<cc:ControlView/>
+		<cc:ControlView Minimum="50" Maximum="10000"/>
 	</Grid>
 </Window>

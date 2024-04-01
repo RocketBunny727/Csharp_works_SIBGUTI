@@ -8,8 +8,6 @@ namespace Homework_9
 {
     public partial class ControlView : UserControl
     {
-        private const double _maxValue = 10005555;
-        private const double _minValue = 0;
         private double _currentValue;
         private string _data;
 
@@ -22,15 +20,24 @@ namespace Homework_9
             set => SetValue(IsExpandedProperty, value);
         }
 
-        public double MaxValue
+        public static readonly StyledProperty<double> MinimumProperty =
+            AvaloniaProperty.Register<ControlView, double>(nameof(Minimum));
+
+        public double Minimum
         {
-            get { return _maxValue; }
+            get => GetValue(MinimumProperty);
+            set => SetValue(MinimumProperty, value);
         }
 
-        public double MinValue
+        public static readonly StyledProperty<double> MaximumProperty =
+            AvaloniaProperty.Register<ControlView, double>(nameof(Maximum));
+
+        public double Maximum
         {
-            get { return _minValue; }
+            get => GetValue(MaximumProperty);
+            set => SetValue(MaximumProperty, value);
         }
+
 
         public double CurrentValue
         {
@@ -68,7 +75,6 @@ namespace Homework_9
             IsExpanded = !IsExpanded;
             var slider = this.FindControl<Slider>("Slider");
             slider.IsVisible = IsExpanded;
-            slider.Minimum = MinValue; slider.Maximum = MaxValue;
 
             var window = this.VisualRoot as Window;
             if (window != null)

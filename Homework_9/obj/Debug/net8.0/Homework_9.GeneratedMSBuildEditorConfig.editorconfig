@@ -13,15 +13,15 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Homework_9
-build_property.ProjectDir = C:\Users\Admin\Source\Repos\Csharp_works_SIBGUTI\Homework_9\
+build_property.ProjectDir = C:\Users\Admin\source\repos\Csharp_works_SIBGUTI\Homework_9\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 
-[C:/Users/Admin/Source/Repos/Csharp_works_SIBGUTI/Homework_9/App.axaml]
+[C:/Users/Admin/source/repos/Csharp_works_SIBGUTI/Homework_9/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/Admin/Source/Repos/Csharp_works_SIBGUTI/Homework_9/ControlView.axaml]
+[C:/Users/Admin/source/repos/Csharp_works_SIBGUTI/Homework_9/ControlView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/Admin/Source/Repos/Csharp_works_SIBGUTI/Homework_9/MainWindow.axaml]
+[C:/Users/Admin/source/repos/Csharp_works_SIBGUTI/Homework_9/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
