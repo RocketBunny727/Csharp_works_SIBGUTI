@@ -1,0 +1,14 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Homework_9"
+        xmlns:cc="clr-namespace:Homework_9"
+        mc:Ignorable="d" Width="800" Height="450"
+        x:Class="Homework_9.MainWindow"
+        Title="Homework_9">
+
+	<Grid>
+		<cc:ControlView/>
+	</Grid>
+</Window>
