@@ -1,0 +1,161 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:models="using:MyColorControl.Models"
+			 xmlns:vm="using:MyColorControl.ViewModels"
+			 xmlns:local="using:MyColorControl.Views.Content"
+             xmlns:converters="using:MyColorControl.Converters"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="MyColorControl.Views.Content.ColorTemplate"
+             x:DataType="vm:ColorControlViewModel">
+
+	<UserControl.DataContext>
+		<vm:ColorControlViewModel/>
+	</UserControl.DataContext>
+
+	<UserControl.Resources>
+		<converters:ColorToBrushConverter x:Key="ColorToBrushConverter"/>
+		<converters:MultiColorComponentConverter x:Key="MultiColorComponentConverter"/>
+	</UserControl.Resources>
+
+	<StackPanel Orientation="Vertical">
+		<Button Command="{Binding Palette.ToggleVisibilityCommand}" HorizontalAlignment="Center" Margin="0,20,0,0">
+			<Image Source="{Binding Palette.ButtonIcon}" Height="50" Width="80"/>
+		</Button>
+		<StackPanel IsVisible="{Binding Palette.IsVisible}" Background="LightGray" Height="520" Width="800">
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="0.8*"/>
+					<ColumnDefinition Width="1*"/>
+				</Grid.ColumnDefinitions>
+				<StackPanel Grid.Column="0">
+					<TextBlock Text="Основные цвета:" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="Black" Margin="5"/>
+					<ItemsControl ItemsSource="{Binding Palette.MainColors}">
+						<ItemsControl.ItemsPanel>
+							<ItemsPanelTemplate>
+								<WrapPanel Orientation="Horizontal"/>
+							</ItemsPanelTemplate>
+						</ItemsControl.ItemsPanel>
+						<ItemsControl.ItemTemplate>
+							<DataTemplate>
+								<Border BorderBrush="DarkGray" BorderThickness="2" Width="29" Height="29" Margin="4">
+									<Rectangle Fill="{Binding Converter={StaticResource ColorToBrushConverter}}" IsEnabled="True" Width="25" Height="25" Tapped="SelectedColorTapped"/>
+								</Border>
+							</DataTemplate>
+						</ItemsControl.ItemTemplate>
+					</ItemsControl>
+					<TextBlock Text="Пользовательские цвета:" HorizontalAlignment="Left" Foreground="Black" Margin="5"/>
+					<ItemsControl ItemsSource="{Binding Palette.UserColors}">
+						<ItemsControl.ItemsPanel>
+							<ItemsPanelTemplate>
+								<WrapPanel Orientation="Horizontal"/>
+							</ItemsPanelTemplate>
+						</ItemsControl.ItemsPanel>
+						<ItemsControl.ItemTemplate>
+							<DataTemplate>
+								<Border BorderBrush="DarkGray" BorderThickness="2" Width="29" Height="29" Margin="4">
+									<Rectangle Fill="{Binding Converter={StaticResource ColorToBrushConverter}}" Width="25" Height="25"/>
+								</Border>
+							</DataTemplate>
+						</ItemsControl.ItemTemplate>
+					</ItemsControl>
+				</StackPanel>
+
+				<StackPanel Grid.Column="1" Margin="2">
+					<Grid>
+						<Grid.RowDefinitions>
+							<RowDefinition Height="5*"/>
+							<RowDefinition Height="0.3*"/>
+						</Grid.RowDefinitions>
+						<StackPanel Grid.Row="0" Margin="10">
+							<Grid>
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition Width="1*"/>
+									<ColumnDefinition Width="0.2*"/>
+								</Grid.ColumnDefinitions>
+								<Border Grid.Column="0" BorderBrush="DarkGray" BorderThickness="1" Width="352" Height="352">
+									<ColorSpectrum Cursor="Cross" Width="350" Height="350" Color="{Binding Palette.SelectedColor}"/>
+								</Border>
+								<ColorSlider Grid.Column="1" Orientation="Vertical" Height="300" Color="{Binding Palette.SelectedColor}"/>
+							</Grid>
+						</StackPanel>
+
+						<StackPanel Grid.Row="1">
+							<Grid>
+								<Grid.RowDefinitions>
+									<RowDefinition Height="0.75*"/>
+									<RowDefinition Height="0.25*"/>
+								</Grid.RowDefinitions>
+								<StackPanel Grid.Row="0">
+									<Grid>
+										<Grid.ColumnDefinitions>
+											<ColumnDefinition Width="1*"/>
+											<ColumnDefinition Width="1*"/>
+											<ColumnDefinition Width="1*"/>
+										</Grid.ColumnDefinitions>
+
+										<Grid Grid.Column="0">
+											<Grid.RowDefinitions>
+												<RowDefinition Height="1*"/>
+												<RowDefinition Height="0.2*"/>
+											</Grid.RowDefinitions>
+											<Border Grid.Row="0" BorderBrush="Black" BorderThickness="1" Width="102" Height="52">
+												<StackPanel Background="{Binding Palette.SelectedColor, Converter={StaticResource ColorToBrushConverter}}" Orientation="Vertical" Width="100" Height="50" HorizontalAlignment="Center" VerticalAlignment="Center">
+													<TextBlock Text="{Binding Palette.SelectedColor}" Foreground="Black" FontSize="16" TextAlignment="Center"/>
+												</StackPanel>
+											</Border>
+											<TextBlock Grid.Row="1" Text="Заливка" Margin="0" Foreground="Black" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+										</Grid>
+										
+										<Grid Grid.Column="1">
+											<Grid.ColumnDefinitions>
+												<ColumnDefinition Width="3*"/>
+												<ColumnDefinition Width="2.2*"/>
+											</Grid.ColumnDefinitions>
+											
+											<StackPanel Grid.Column="0" Orientation="Vertical">
+													<TextBlock Text="Оттенок:" Foreground="Black" Margin="0, 8"/>
+													<TextBlock Text="Контраст:" Foreground="Black" Margin="0, 8"/>
+													<TextBlock Text="Яркость:" Foreground="Black" Margin="0, 8"/>
+											</StackPanel>
+											<StackPanel Grid.Column="1" Orientation="Vertical">
+													<TextBox x:Name="H" Text="{Binding Palette.SelectedHSVColor.H, Mode=OneWay, StringFormat=N1}" TextAlignment="Center" Foreground="Gray" Background="White" SelectionForegroundBrush="White" Width="20" Height="20" />
+													<TextBox x:Name="S" Text="{Binding Palette.SelectedHSVColor.S, Mode=OneWay, StringFormat=N1}" TextAlignment="Center" Foreground="Gray" Background="White" SelectionForegroundBrush="White" Width="20" Height="20"/>
+													<TextBox x:Name="V" Text="{Binding Palette.SelectedHSVColor.V, Mode=OneWay, StringFormat=N1}" TextAlignment="Center" Foreground="Gray" Background="White" SelectionForegroundBrush="White" Width="20" Height="20"/>
+											</StackPanel>
+										</Grid>
+
+										<Grid Grid.Column="2">
+											<Grid.ColumnDefinitions>
+												<ColumnDefinition Width="3*"/>
+												<ColumnDefinition Width="2.2*"/>
+											</Grid.ColumnDefinitions>
+
+											<StackPanel Grid.Column="0" Orientation="Vertical">
+												<TextBlock Text="Красный:" Foreground="Black" Margin="2, 8, 0, 8"/>
+												<TextBlock Text="Зелёный:" Foreground="Black" Margin="2, 8, 0, 8"/>
+												<TextBlock Text="Синий:" Foreground="Black" Margin="2, 8, 0, 8"/>
+											</StackPanel>
+											<StackPanel Grid.Column="1" Orientation="Vertical">
+													<TextBox x:Name="R" Text="{Binding Palette.SelectedColor.R, Mode=TwoWay}" TextAlignment="Center" Foreground="Gray" Background="White" SelectionForegroundBrush="White" Width="20" Height="20"/>
+													<TextBox x:Name="G" Text="{Binding Palette.SelectedColor.G, Mode=TwoWay}" TextAlignment="Center" Foreground="Gray" Background="White" SelectionForegroundBrush="White" Width="20" Height="20"/>
+													<TextBox x:Name="B" Text="{Binding Palette.SelectedColor.B, Mode=TwoWay}" TextAlignment="Center" Foreground="Gray" Background="White" SelectionForegroundBrush="White" Width="20" Height="20"/>
+											</StackPanel>
+										</Grid>
+									</Grid>
+								</StackPanel>
+
+								<StackPanel Grid.Row="1" Orientation="Horizontal">
+									<Border BorderBrush="Black" BorderThickness="2" Margin="4" Width="350">
+										<Button Content="Добавить цвет" Command="{Binding Palette.AddUserColorCommand}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="Black" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Center" Width="344"/>
+									</Border>
+								</StackPanel>
+							</Grid>
+						</StackPanel>
+					</Grid>
+				</StackPanel>
+			</Grid>
+		</StackPanel>
+	</StackPanel>
+</UserControl>
