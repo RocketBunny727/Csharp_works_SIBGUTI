@@ -1,0 +1,120 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:MyLogicGates.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:controls="clr-namespace:MyLogicGates.Controls"
+		xmlns:vmc="clr-namespace:MyLogicGates.ViewModels.Controls"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="MyLogicGates.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="MyLogicGates"
+		Background="White">
+
+	<Design.DataContext>
+		<vm:MainWindowViewModel/>
+	</Design.DataContext>
+
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="1*"/>
+			<ColumnDefinition Width="1*"/>
+		</Grid.ColumnDefinitions>
+		<Grid Grid.Column="0">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="1*"/>
+				<ColumnDefinition Width="1*"/>
+			</Grid.ColumnDefinitions>
+			<Grid Grid.Column="0">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="1*"/>
+					<RowDefinition Height="1*"/>
+					<RowDefinition Height="1*"/>
+					<RowDefinition Height="1*"/>
+				</Grid.RowDefinitions>
+				<StackPanel Grid.Row="0" HorizontalAlignment="Center" Margin="40">
+					<vmc:AndGateViewModel TypeValve="ANSI" Height="100" Width="50" Stroke="Black" StrokeThickness="2"/>
+				</StackPanel>
+				<StackPanel Grid.Row="1" HorizontalAlignment="Center" Margin="40">
+					<vmc:BuffGateViewModel TypeValve="ANSI" Height="100" Width="50" Stroke="Black" StrokeThickness="2"/>
+				</StackPanel>
+				<StackPanel Grid.Row="2" HorizontalAlignment="Center" Margin="40">
+					<vmc:InverterGate TypeValve="ANSI" Height="100" Width="50" Stroke="Black" StrokeThickness="2"/>
+				</StackPanel>
+				<StackPanel Grid.Row="3" HorizontalAlignment="Center" Margin="40">
+					<vmc:NandGateViewModel TypeValve="ANSI" Height="100" Width="50" Stroke="Black" StrokeThickness="2"/>
+				</StackPanel>
+			</Grid>
+
+			<Grid Grid.Column="1">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="1*"/>
+					<RowDefinition Height="1*"/>
+					<RowDefinition Height="1*"/>
+					<RowDefinition Height="1*"/>
+				</Grid.RowDefinitions>
+				<StackPanel Grid.Row="0" HorizontalAlignment="Center" Margin="40">
+					<vmc:AndGateViewModel TypeValve="GOST" Height="100" Width="50" Stroke="Black" StrokeThickness="2"/>
+				</StackPanel>
+				<StackPanel Grid.Row="1" HorizontalAlignment="Center" Margin="40">
+					<vmc:BuffGateViewModel TypeValve="GOST" Height="100" Width="50" Stroke="Black" StrokeThickness="2"/>
+				</StackPanel>
+				<StackPanel Grid.Row="2" HorizontalAlignment="Center" Margin="40">
+					<vmc:InverterGate TypeValve="GOST" Height="100" Width="50" Stroke="Black" StrokeThickness="2"/>
+				</StackPanel>
+				<StackPanel Grid.Row="3" HorizontalAlignment="Center" Margin="40">
+					<vmc:NandGateViewModel TypeValve="GOST" Height="100" Width="50" Stroke="Black" StrokeThickness="2"/>
+				</StackPanel>
+			</Grid>
+		</Grid>
+
+		<Grid Grid.Column="1">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="1*"/>
+				<ColumnDefinition Width="1*"/>
+			</Grid.ColumnDefinitions>
+			<Grid Grid.Column="0">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="1*"/>
+					<RowDefinition Height="1*"/>
+					<RowDefinition Height="1*"/>
+					<RowDefinition Height="1*"/>
+				</Grid.RowDefinitions>
+				<StackPanel Grid.Row="0" HorizontalAlignment="Center" Margin="40">
+					<vmc:NorGate TypeValve="ANSI" Height="100" Width="50" Stroke="Black" StrokeThickness="2"/>
+				</StackPanel>
+				<StackPanel Grid.Row="1" HorizontalAlignment="Center" Margin="40">
+					<vmc:OrGateViewModel TypeValve="ANSI" Height="100" Width="50" Stroke="Black" StrokeThickness="2"/>
+				</StackPanel>
+				<StackPanel Grid.Row="2" HorizontalAlignment="Center" Margin="40">
+					<vmc:XorGateViewModel TypeValve="ANSI" Height="100" Width="50" Stroke="Black" StrokeThickness="2"/>
+				</StackPanel>
+				<StackPanel Grid.Row="3" HorizontalAlignment="Center" Margin="40">
+					<vmc:XnorGateViewModel TypeValve="ANSI" Height="100" Width="50" Stroke="Black" StrokeThickness="2"/>
+				</StackPanel>
+			</Grid>
+
+			<Grid Grid.Column="1">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="1*"/>
+					<RowDefinition Height="1*"/>
+					<RowDefinition Height="1*"/>
+					<RowDefinition Height="1*"/>
+				</Grid.RowDefinitions>
+				<StackPanel Grid.Row="0" HorizontalAlignment="Center" Margin="40">
+					<vmc:NorGate TypeValve="GOST" Height="100" Width="50" Stroke="Black" StrokeThickness="2"/>
+				</StackPanel>
+				<StackPanel Grid.Row="1" HorizontalAlignment="Center" Margin="40">
+					<vmc:OrGateViewModel TypeValve="GOST" Height="100" Width="50" Stroke="Black" StrokeThickness="2"/>
+				</StackPanel>
+				<StackPanel Grid.Row="2" HorizontalAlignment="Center" Margin="40">
+					<vmc:XorGateViewModel TypeValve="GOST" Height="100" Width="50" Stroke="Black" StrokeThickness="2"/>
+				</StackPanel>
+				<StackPanel Grid.Row="3" HorizontalAlignment="Center" Margin="40">
+					<vmc:XnorGateViewModel TypeValve="GOST" Height="100" Width="50" Stroke="Black" StrokeThickness="2"/>
+				</StackPanel>
+			</Grid>
+		</Grid>
+	</Grid>
+</Window>
